@@ -7,7 +7,7 @@ This project is built with ReactJs, Redux,  React-Router-Dom, Axios, PrivateRout
 ### Installation
 1. Clone the repo
    ```sh
-   git clone
+   git clone https://github.com/creator79/Ecommerce.git
     ```
 2. Install NPM packages
     ```sh
@@ -23,12 +23,10 @@ This project is built with ReactJs, Redux,  React-Router-Dom, Axios, PrivateRout
     ```
 
 ### Screenshots of the project 📸
-![image](https://user-images.githubusercontent.com/55031190/126039817-9b6b9b9a-5b9e-4b9e-9b9a-9b9a9b9a9b9a.png)
-![image](https://user-images.githubusercontent.com/55031190/126039827-9b6b9b9a-5b9e-4b9e-9b9a-9b9a9b9a9b9a.png)
-![image](https://user-images.githubusercontent.com/55031190/126039832-9b6b9b9a-5b9e-4b9e-9b9a-9b9a9b9a9b9a.png)
-![image](https://user-images.githubusercontent.com/55031190/126039836-9b6b9b9a-5b9e-4b9e-9b9a-9b9a9b9a9b9a.png)
-![image](https://user-images.githubusercontent.com/55031190/126039839-9b6b9b9a-5b9e-4b9e-9b9a-9b9a9b9a9b9a.png)
-![image](https://user-images.githubusercontent.com/55031190/126039841-9b6b9b9a-5b9e-4b9e-9b9a-9b9a9b9a9b9a.png)
+![screencapture-ecommerce-bice-beta-vercel-app-2023-12-31-17_12_25](https://github.com/creator79/Ecommerce/assets/72148636/283492b6-2a27-4149-a44b-575221408707)
+![screencapture-ecommerce-bice-beta-vercel-app-2023-12-31-17_12_48](https://github.com/creator79/Ecommerce/assets/72148636/aa9c51b7-a509-424f-8f00-4b96e39b2492)
+![screencapture-ecommerce-bice-beta-vercel-app-2023-12-31-17_13_13](https://github.com/creator79/Ecommerce/assets/72148636/bebce6a2-3651-4416-996b-59013eac54ca)
+![screencapture-ecommerce-bice-beta-vercel-app-2023-12-31-17_11_48](https://github.com/creator79/Ecommerce/assets/72148636/7f719f07-cadc-47d6-876b-be8ee441b22f)
 
 ### Contact
 Name: Vivek Upadhyay
