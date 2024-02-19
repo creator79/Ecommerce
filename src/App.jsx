@@ -2,7 +2,7 @@ import React from "react";
 import { HashRouter as Router } from "react-router-dom";
 
 //? Components
-import { Navbar, Sidebar, Footer } from "./components";
+import { Navbar, Sidebar, Footer, Loading } from "./components";
 import ConfigRoutes from "./routes/ConfigRoutes";
 
 //? Global Style
