@@ -1,4 +1,4 @@
-![ClipWindowsGIF](https://github.com/creator79/Ecommerce/assets/72148636/47840613-52ef-4ced-9595-ab3ba3672325)### About This Project
+### About This Project
 This project is a assignmnet Build With Innovation Private Limited for ReactJs Internship.
 
 ### Built With
