@@ -20,6 +20,7 @@ const GlobalStyle = createGlobalStyle`
   --gray-color-1: #6b7280;
   --gray-color-2: #d6d7da41;
   --white-color: #fff;
+  
 
   /** sizes */
   --max-width: 1300px;
@@ -90,7 +91,7 @@ font-size: 0.75rem; //12px
 /*? global styles */
 
 body {
-  background: var(--bg-color);
+  // background: var(--bg-color);
   overflow-x: hidden;
   font-family: "Poppins", sans-serif;
 }

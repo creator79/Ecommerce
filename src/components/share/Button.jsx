@@ -14,12 +14,12 @@ const Button = styled.button`
     switch (props.variant) {
       case "primary":
         return css`
-          border: 0.2rem solid var(--green-color-1);
+          border: 0.1rem solid var(--gray-color-1);
           a {
             padding: 0.75rem 1.5rem;
           }
           &:hover {
-            background: var(--green-color-1);
+            background: var(--black-color);
             a {
               color: var(--white-color);
             }
@@ -28,7 +28,7 @@ const Button = styled.button`
 
       case "secondary":
         return css`
-          border: 0.2rem solid var(--red-color-1);
+          border: 0.1rem solid var(--gray-color-1);
           color: var(--gray-color-1);
           a {
             padding: 0.75rem 1.5rem;
@@ -49,3 +49,4 @@ const Button = styled.button`
   }}
 `;
 export default Button;
+

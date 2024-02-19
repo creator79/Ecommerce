@@ -22,10 +22,10 @@ const CartItem = ({ title, price, amount, id, image }) => {
 
   return (
     <Wrapper>
-      <div className='item__img'>
+      <div className="item__img">
         <img src={image} alt={title} />
       </div>
-      <div className='item__info'>
+      <div className="item__info">
         <Link to={`/products/${id}`} title={title}>
           {truncate(title, 20)}
         </Link>
@@ -48,12 +48,12 @@ const CartItem = ({ title, price, amount, id, image }) => {
 
 const Wrapper = styled.article`
   padding: 0.5rem;
-  background: var(--white-color);
+  background: var(--black-color);
   display: flex;
   align-items: center;
   gap: 1rem;
   margin-bottom: 0.5rem;
-  
+
   ${Screen.sm`
     gap: 2rem;
     `}

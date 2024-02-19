@@ -35,7 +35,7 @@ const ConfigRoutes = () => {
   };
 
   if (!isLoggedIn) {
-  <Navigate to='/login' />
+  <Navigate to='/' />
   }
 
   return (
@@ -50,6 +50,22 @@ const ConfigRoutes = () => {
         <Route path="/checkout" element={<PrivateRoute element={<CheckoutPage />} />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
+
+      {/* remove all protected routes 
+       */}
+      {/* <Routes>
+        <Route path="/" element={<LoginPage onLogin={() => setLoggedIn(true)} />} />
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/products/:id" element={<SingleProductPage />} />
+        <Route path="/products" element={<ProductsPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="login" element={<LoginPage onLogin={() => setLoggedIn(true)} />} />
+
+        <Route path="*" element={<ErrorPage />} />
+
+      </Routes> */}
     </React.Suspense>
   );
 };

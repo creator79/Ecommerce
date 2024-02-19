@@ -1,73 +1,59 @@
 import React from "react";
-import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { CardBody, CardContainer, CardItem } from "../components/ui/3d-card";
+import Stars from "./Stars";
 
-import Screen from "../styles/Screen";
-
-import { truncate } from "../utils/helpers";
-
-import { Stars, Typography } from ".";
-
-const GridProducts = ({ products }) => {
+export default function ThreeDCardDemo({ products }) {
   return (
-    <Wrapper>
+    <div className="flex flex-wrap gap-2 ml-20">
       {products.map(({ title, id, image, price, rating }) => (
-        <article key={id}>
-          <Link to={`/products/${id}`}>
-            <img src={image} alt={title} />
-          </Link>
-          <Typography.H3 title={title}>{truncate(title, 25)}</Typography.H3>
-          <div>
-            <p>${price}</p>
-            <Stars stars={rating} />
-          </div>
-        </article>
+        <CardContainer key={id} className="inter-var flex">
+          {" "}
+          {/* Add flex class here */}
+          <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
+            <CardItem
+              translateZ="50"
+              className="text-xl font-bold text-neutral-600 dark:text-white"
+            >
+              {title}
+            </CardItem>
+            <CardItem
+              as="p"
+              translateZ="60"
+              className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
+            >
+              Hover over this card to unleash the power of CSS perspective
+            </CardItem>
+            <CardItem translateZ="100" className="w-full mt-4">
+              <Link to={`/products/${id}`} key={id}>
+                <img
+                  src={image}
+                  height="1000"
+                  width="1000"
+                  className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                  alt="thumbnail"
+                />
+              </Link>
+            </CardItem>
+            <div className="flex justify-between items-center mt-20">
+              <CardItem
+                translateZ={20}
+                as="button"
+                className="px-4 py-2 rounded-xl text-xl font-normal dark:text-white"
+              >
+                ${price}
+              </CardItem>
+              <CardItem
+                translateZ={20}
+                as="button"
+                className="px-4 py-2 rounded-xl bg-black dark:bg-black dark:text-black text-white text-xs font-bold flex-1 flex-row"
+              >
+                {rating && <Stars stars={rating} />}
+              </CardItem>
+            </div>
+          </CardBody>
+        </CardContainer>
       ))}
-    </Wrapper>
+    </div>
   );
-};
-
-const Wrapper = styled.div`
-  display: grid;
-  gap: 2rem 1.5rem;
-  justify-content: center;
-
-  ${Screen.md`
-  grid-template-columns: 1fr 1fr;
-`}
-  ${Screen.xl`
-  grid-template-columns: 1fr 1fr 1fr ;
-`}
-
-article {
-    padding: 1rem;
-    background: var(--white-color);
-    border-radius: var(--radius);
-    transition: var(--transition);
-    min-height: 35rem;
-
-    &:hover {
-      box-shadow: 0 0 1rem 1rem var(--gray-color-2);
-    }
-    h3 {
-      margin: 1rem 0;
-      min-height: 2.4rem;
-    }
-    img {
-      max-height: 25rem;
-      object-fit: contain;
-    }
-    div {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    p {
-      font-size: 1.8rem;
-      color: var(--red-color-1);
-    }
-  }
-`;
-
-export default GridProducts;
+}

@@ -13,19 +13,19 @@ const CartTotals = () => {
   return (
     <Wrapper>
       <div>
-        <Typography.H3 className='total__items'>
+        <Typography.H3 className="total__items">
           Total Items : <span>{total_items}</span>
         </Typography.H3>
         <br />
-        <Typography.H4 className='total__price'>
+        <Typography.H4 className="total__price">
           Total Price : <span>${total_price.toFixed(2)}</span>
         </Typography.H4>
       </div>
       <hr />
       <Link
-        to='/checkout'
-        type='button'
-        className='total__btn '
+        to="/checkout"
+        type="button"
+        className="total__btn "
         onClick={checkout}
       >
         Checkout
@@ -35,7 +35,7 @@ const CartTotals = () => {
 };
 
 const Wrapper = styled.article`
-  border: 0.2rem solid var(--green-color-1);
+  border: 0.1rem solid var(--gray-color-1);
   border-radius: var(--radius);
   padding: 1rem 1.5rem;
 
@@ -69,7 +69,7 @@ const Wrapper = styled.article`
   }
 
   .total__btn {
-    background: var(--green-color-1);
+    background: var(--gray-color-2);
     width: 100%;
     padding: 0.5rem;
     color: var(--white-color);
@@ -77,7 +77,7 @@ const Wrapper = styled.article`
     display: inline-block;
     text-align: center;
     letter-spacing: 0.2rem;
-    border: 0.2rem solid var(--green-color-1);
+    border: 0.1rem solid var(--white-color);
     transition: var(--transition);
     &:hover {
       background: transparent;

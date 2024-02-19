@@ -14,14 +14,14 @@ const CartButtons = () => {
   return (
     <Wrapper>
       <NavLink
-        to='/cart'
+        to="/cart"
         onClick={closeSidebar}
         className={({ isActive }) =>
           isActive ? "cart__container active" : "cart__container"
         }
       >
         Cart
-        <div className='cart-icon'>
+        <div className="cart-icon">
           <Icons.FaShoppingCartStyled />
           <span>{total_items}</span>
         </div>
@@ -35,7 +35,9 @@ const Wrapper = styled.div`
   align-items: center;
 
   a {
+    color: var(--white-color);
     font-size: var(--fs-500);
+    text-decoration: none;
   }
 
   .cart__container {
@@ -48,9 +50,9 @@ const Wrapper = styled.div`
   }
 
   .active {
-    border-color: var(--red-color-1);
+    border-color: var(--red-color);
   }
-  
+
   .cart-icon {
     position: relative;
     margin-left: 0.4rem;
@@ -61,9 +63,9 @@ const Wrapper = styled.div`
       right: -18px;
       padding: 0.1rem;
       min-width: 2rem;
-      background-color: var(--red-color-1);
+      background-color: var(--white-color);
       border-radius: 50%;
-      color: var(--blue-color-3);
+      color: var(--red-color-1);
       font-size: 1.2rem;
       display: flex;
       align-items: center;

@@ -90,7 +90,7 @@ const Wrapper = styled.div`
   }
 
   .search__input {
-    background: var(--blue-color-3);
+    background: var(--white-color);
     border-radius: 0.5rem;
     padding: 1rem;
     width: min(100%, 200px);
@@ -107,7 +107,7 @@ const Wrapper = styled.div`
     gap: 1rem;
 
     button {
-      color: var(--blue-color-1);
+      color: var(--white-color);
       font-size: var(--fs-500);
       padding-right: 0.5rem;
       text-transform: capitalize;
@@ -119,7 +119,7 @@ const Wrapper = styled.div`
     }
 
     .active {
-      border-bottom-color: var(--green-color-1);
+      border-bottom-color: var(--white-color);
       padding-left: 0.5rem;
     }
   }

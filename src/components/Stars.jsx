@@ -23,11 +23,18 @@ const Stars = ({ stars = { rate: "" } }) => {
 
   return <Wrapper>{tempStars}</Wrapper>;
 };
+
 const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  margin-left: 12rem;
+
   span {
     font-size: 1.4rem;
     margin-inline: 0.1rem;
     color: var(--yellow-color-2);
   }
 `;
+
 export default Stars;

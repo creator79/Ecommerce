@@ -16,15 +16,15 @@ const Sidebar = () => {
   return (
     <Wrapper>
       <aside className={isSidebarOpen ? "show-sidebar sidebar" : "sidebar"}>
-        <div className='sidebar-header'>
-          <Link to='/' onClick={closeSidebar}>
+        <div className="sidebar-header">
+          <Link to="/" onClick={closeSidebar}>
             <Icons.FaStoreStyled />
           </Link>
-          <button type='button' onClick={closeSidebar}>
+          <button type="button" onClick={closeSidebar}>
             <Icons.FaTimesStyled />
           </button>
         </div>
-        <nav className='sidebar__nav'>
+        <nav className="sidebar__nav">
           <ul>
             {links.map(({ id, url, text }) => (
               <li key={id}>
@@ -39,7 +39,7 @@ const Sidebar = () => {
             ))}
           </ul>
         </nav>
-        <div className='sidebar__cart'>
+        <div className="sidebar__cart">
           <CartButtons />
         </div>
       </aside>
@@ -52,7 +52,6 @@ const Wrapper = styled.div`
     display:none;
 `}
   .sidebar {
-    background: var(--bg-color);
     position: fixed;
     top: 0;
     left: 0;

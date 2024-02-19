@@ -16,7 +16,7 @@ const Footer = () => {
 };
 
 const FooterWrapper = styled.footer`
-  background: var(--green-color-1);
+  // background: var(--green-color-1);
   height: var(--footer-height);
   padding: 3rem;
   display: flex;

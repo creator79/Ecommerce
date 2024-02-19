@@ -8,14 +8,12 @@ const StyledSignupPage = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-margin: 0 auto;
+  margin: 0 auto;
   max-width: 40%;
   width: 100%;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-
-
 
   h2 {
     text-align: center;
@@ -27,7 +25,6 @@ margin: 0 auto;
     width: 100%;
     aling-items: center;
     justify-content: center;
-    
 
     label {
       margin-bottom: 10px;
@@ -83,10 +80,9 @@ const SignupPage = ({ onLogin }) => {
 
       // Save the token to local storage
       localStorage.setItem("token", token);
-alert("You have successfully logged in");
+      alert("You have successfully logged in");
       // Navigate to the home page
       navigate("/home");
-
     } else {
       alert("Invalid username or password");
     }
@@ -94,10 +90,9 @@ alert("You have successfully logged in");
 
   return (
     <StyledSignupPage>
-      <Link to="/login">
-      </Link>
-      <h2>Signup Page</h2>
-      <form onSubmit={handleSubmit}>
+      <Link to="/login"></Link>
+      <h2 className="text-white">Signup Page</h2>
+      <form onSubmit={handleSubmit} className=" text-white">
         <label>
           Username:
           <input
@@ -118,10 +113,12 @@ alert("You have successfully logged in");
           />
         </label>
         <br />
-        <button type="submit">Signup</button>
+        <button type="submit" className="text-white">
+          Signup
+        </button>
       </form>
-      <h4>Dummy username:   kminchelle </h4>
-        <h4>Dummy Password:  0lelplR </h4>
+      <h4 className="text-white">Dummy username: kminchelle </h4>
+      <h4 className="text-white">Dummy Password: 0lelplR </h4>
     </StyledSignupPage>
   );
 };

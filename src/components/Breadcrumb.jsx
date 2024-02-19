@@ -6,9 +6,9 @@ import { truncate } from "../utils/helpers";
 const Breadcrumb = ({ title, products }) => {
   return (
     <Wrapper>
-      <Link to='/home'>Home /</Link>
-      {products && <Link to='/products'> prodcuts / </Link>}
-      <span>  {truncate(title, 20)}</span>
+      <Link to="/home">Home /</Link>
+      {products && <Link to="/products"> prodcuts / </Link>}
+      <span> {truncate(title, 20)}</span>
     </Wrapper>
   );
 };
@@ -25,17 +25,16 @@ const Wrapper = styled.div`
 
   a {
     font-size: var(--fs-400);
-    color: var(--blue-color-1);
+    color: var(--white-color);
     transition: var(--transition);
     &:hover {
-      color: var(--green-color-1);
+      color: var(--white-color);
     }
   }
-  
+
   span {
     font-size: var(--fs-400);
-    color: var(--green-color-1);
-
+    color: var(--white-color);
   }
 `;
 
