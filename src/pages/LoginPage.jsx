@@ -1,65 +1,21 @@
 import React, { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import styled from "styled-components";
+import Auth from "../assets/cart.gif";
+import { Link, useNavigate } from "react-router-dom";
 
-const StyledSignupPage = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  margin: 0 auto;
-  max-width: 40%;
-  width: 100%;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-
-  h2 {
-    text-align: center;
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    aling-items: center;
-    justify-content: center;
-
-    label {
-      margin-bottom: 10px;
-      font-weight: bold;
-
-      input {
-        padding: 8px;
-        width: 100%;
-        box-sizing: border-box;
-        margin-top: 5px;
-      }
-    }
-
-    button {
-      background-color: #007bff;
-      color: #fff;
-      padding: 10px;
-      cursor: pointer;
-      width: 100%;
-    }
-  }
-`;
-
-const SignupPage = ({ onLogin }) => {
-  const navigate = useNavigate();
+const LoginPage = () => {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
   });
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = async (e) => {
@@ -84,43 +40,102 @@ const SignupPage = ({ onLogin }) => {
       // Navigate to the home page
       navigate("/home");
     } else {
-      alert("Invalid username or password");
+      setError("Invalid username or password");
     }
   };
 
   return (
-    <StyledSignupPage>
-      <Link to="/login"></Link>
-      <h2 className="text-white">Signup Page</h2>
-      <form onSubmit={handleSubmit} className=" text-white">
-        <label>
-          Username:
-          <input
-            type="text"
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
-        <label>
-          Password:
-          <input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
-        <button type="submit" className="text-white">
-          Signup
-        </button>
-      </form>
-      <h4 className="text-white">Dummy username: kminchelle </h4>
-      <h4 className="text-white">Dummy Password: 0lelplR </h4>
-    </StyledSignupPage>
+    <>
+      <div className="min-w-screen min-h-screen h-full bg-gray-900 flex items-center justify-center px-5 py-5">
+        <div
+          className="bg-gray-100 text-gray-500 rounded-3xl shadow-xl w-full overflow-hidden"
+          style={{ maxWidth: 1000 }}
+        >
+          <div className="md:flex w-full">
+            <div className="hidden md:block w-1/2 bg-indigo-500 py-10 px-10">
+              <img src={Auth} alt="No Image " className=" h-auto w-[80%]" />
+            </div>
+            <div className="w-full md:w-1/2 py-10 px-5 md:px-10">
+              <form onSubmit={handleSubmit}>
+                <div className="text-center mb-10">
+                  <h1 className="font-bold text-3xl text-gray-900">Login</h1>
+                  <p>Enter your information to login</p>
+                </div>
+                <div>
+                  <div className="flex -mx-3"></div>
+                  <div className="flex -mx-3">
+                    <div className="w-full px-3 mb-5">
+                      <label className="text-xl font-semibold px-1">
+                        Username
+                      </label>
+                      <div className="flex">
+                        <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
+                          <i className="mdi mdi-email-outline text-gray-400 text-lg" />
+                        </div>
+                        <input
+                          type="text"
+                          name="username"
+                          className="w-full -ml-10 pl-10 pr-3 py-2 text-xl rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                          placeholder="johnsmith@example.com"
+                          value={formData.username}
+                          onChange={handleChange}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex -mx-3">
+                    <div className="w-full px-3 mb-12">
+                      <label className="text-xl font-semibold px-1">
+                        Password
+                      </label>
+                      <div className="flex">
+                        <div className="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
+                          <i className="mdi mdi-lock-outline text-gray-400 text-lg" />
+                        </div>
+                        <input
+                          type="password"
+                          name="password"
+                          className="w-full -ml-10 pl-10 pr-3 py-2 text-xl rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
+                          placeholder="************"
+                          value={formData.password}
+                          onChange={handleChange}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  {error && (
+                    <div className="text-red-500 text-center font-semibold text-xs mt-[-2rem]">
+                      {error}
+                    </div>
+                  )}
+                  <div className="flex mx-3 mt-5">
+                    <div className="w-full px-3 mb-5">
+                      <button
+                        className="block w-full max-w-xs mx-auto text-xl bg-indigo-500 hover:bg-indigo-700 focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold"
+                        type="submit"
+                      >
+                        Login
+                      </button>
+                    </div>
+                  </div>
+                  <span className="flex justify-center text-centre gap-2 ">
+                    <h4 className="text-black">Dummy username: kminchelle </h4>
+                    <h4 className="text-black">Dummy Password: 0lelplR </h4>
+                  </span>
+                </div>
+              </form>
+              {/* <p className="flex text-center justify-center mx-auto">
+                Need to Signup?{" "}
+                <Link to="/signup">
+                  <span className=" hover:text-blue-600">Create Account</span>
+                </Link>
+              </p> */}
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 
-export default SignupPage;
+export default LoginPage;
